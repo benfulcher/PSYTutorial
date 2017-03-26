@@ -124,7 +124,6 @@ end
 %-------------------------------------------------------------------------------
 %% We can assess the correlation structure by looking at the Fourier transform
 %-------------------------------------------------------------------------------
-
 figure('color','w');
 for i = 1:numSignals
     % First compute the Fourier transform:

@@ -23,6 +23,28 @@ Plot the signal in the time domain (using `plot`).
 
 Generate the power spectrum (using `FourierPower.m`) to verify.
 
-### Q3?
+### Q3
+
+Generate an autocorrelated signal, `x`, using the following:
+
+    A = -0.8;
+    numSamples = 500;
+    x = zeros(numSamples,1);
+    n = randn(numSamples,1);
+    x(1) = 0.5;
+    for i = 2:numSamples
+        x(i) = A*x(i-1) + n(i);
+    end
+Plot `x` (using `plot`). Does it look like it has non-random structure?
+
+Zoom in on it to look at whether current values of `x` are correlated with future values of `x`.
+
+Predict what the autocorrelation will be at lags 1 and 2.
+
+Plot the autocorrelation using `autocorr` to check your intuition.
+
+Repeat the above with A = 0.8;
+
+### Q4?
 
 ??Something using real data?
