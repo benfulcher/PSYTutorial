@@ -140,16 +140,3 @@ end
 % E: Note the features in each spectrum
 % E: What do the peaks mean?
 % E: Do the peaks change when noise is added?
-
-%-------------------------------------------------------------------------------
-%% OPEN Q.
-% Q: Generate a sinusoidal signal with different amounts of added noise
-% e.g., x = sin((1:numSamples)'/10) + noiseLevel * randn(numSamples,1);
-% (for a range of noise levels)
-% Compare the power spectrum (FourierPower.m) of the signal as you increase the
-% noise level.
-% What happens to the peak?
-% Plot the spectrum at lower noise, moderate noise, and high noise
-
-% Q: Generate a signal that has three peaks in its power spectrum.
-% Generate the power spectrum (using FourierPower.m) to verify.
