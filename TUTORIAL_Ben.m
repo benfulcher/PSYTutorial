@@ -97,22 +97,40 @@ end
 %-------------------------------------------------------------------------------
 %% Autocorrelation functions
 %-------------------------------------------------------------------------------
-% How does a value at time t correlate with the value at time t+1?
+% Remember these from the lecture?
+% These allow you to quantify how a value of the time series at any time, t, is
+% correlated to a future value of the time series; for example at a time-lag of
+% 1, you can measure how the value of a time series at time t is correlated to
+% the value at the next time, t+1.
+% Repeating this for many time-lags, you can get a more complete picture of how
+% a time-series value correlates to a future value at lags 1, 2, 3, and so on.
+% We will compute this below using the autocorr function:
 figure('color','w');
 for i = 1:numSignals
     subplot(numSignals,1,i)
     autocorr(x.(signalTypes{i}));
-    xlabel('Time lag (samples)'); ylabel('Autocorrelation')
+    xlabel('Time lag (samples)');
+    ylabel('Autocorrelation')
     title(signalTypes{i})
 end
 
-% E: What do the shapes tell you about the temporal correlation in the signals?
-% E: What happens to the strength of the correlation when noise is added to a signal?
-% E: Can you explain why?
+%===============================================================================
+%                       ---QUESTIONS TO THINK ABOUT---
+%===============================================================================
+% Does the autocorrelation increase or decrease with increasing time-lags? Why?
+% Do the periodic signals have different correlation structures to the noise signal?
+% What happens to the strength of the correlation when noise is added to a signal?
+% Can you explain why?
+%===============================================================================
 
 %-------------------------------------------------------------------------------
 %% We can assess the correlation structure by looking at the Fourier transform
 %-------------------------------------------------------------------------------
+% Remember the Fourier transform of periodic signals that we studied in the lecture?
+% Here we're going to compute the Fourier transform of the signals we've been
+% looking at using the FourierPower function (provided with this tutorial).
+% This allows us to represent each signal in terms of their periodic components
+% (as sinusoids at a range of *frequencies*)
 figure('color','w');
 for i = 1:numSignals
     % First compute the Fourier transform:
@@ -125,6 +143,11 @@ for i = 1:numSignals
     title(signalTypes{i})
 end
 
-% E: Note the features in each spectrum
-% E: What do the peaks mean?
-% E: Do the peaks change when noise is added?
+%===============================================================================
+%                       ---QUESTIONS TO THINK ABOUT---
+%===============================================================================
+% Note the features in each spectrum -- which signals have peaks?
+% What do the peaks mean? How do you identify the frequency of a given peak.
+% Do the peaks change position when random noise is added?
+% Do the peaks change in magnitude when random noise is added?
+%===============================================================================
